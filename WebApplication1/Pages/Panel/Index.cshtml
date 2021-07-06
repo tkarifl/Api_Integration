@@ -1,0 +1,17 @@
+﻿@page
+@model WebApplication1.Pages.Panel.IndexModel
+@{
+}
+@{ if (Model.url.Length != 0)
+    {
+        <div class="alert alert-danger" role="alert">
+            @(Model.message)<a href="/Identity/Account/Manage/Api_Integration">Here</a>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-success" role="alert">
+            @(Model.message)
+        </div>
+    }
+}

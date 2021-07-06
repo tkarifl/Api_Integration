@@ -1,0 +1,55 @@
+﻿@page
+@model WebApplication1.Areas.Identity.Pages.Account.Manage.testestestestModel
+
+@{
+    ViewData["Title"] = "testestestest";
+}
+
+<h1>testestestest</h1>
+
+<h4>GgUserInfo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="GgUserInfo.Id" />
+            <div class="form-group">
+                <label asp-for="GgUserInfo.RoleUsername" class="control-label"></label>
+                <input asp-for="GgUserInfo.RoleUsername" class="form-control" />
+                <span asp-validation-for="GgUserInfo.RoleUsername" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GgUserInfo.RolePassword" class="control-label"></label>
+                <input asp-for="GgUserInfo.RolePassword" class="form-control" />
+                <span asp-validation-for="GgUserInfo.RolePassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GgUserInfo.ApiKey" class="control-label"></label>
+                <input asp-for="GgUserInfo.ApiKey" class="form-control" />
+                <span asp-validation-for="GgUserInfo.ApiKey" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GgUserInfo.SecretKey" class="control-label"></label>
+                <input asp-for="GgUserInfo.SecretKey" class="form-control" />
+                <span asp-validation-for="GgUserInfo.SecretKey" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GgUserInfo.UserName" class="control-label"></label>
+                <input asp-for="GgUserInfo.UserName" class="form-control" />
+                <span asp-validation-for="GgUserInfo.UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

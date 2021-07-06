@@ -1,0 +1,32 @@
+﻿@page
+@model WebApplication1.Pages.Panel.Gg_get_ready_listModel
+@{
+}
+<div>
+    <!-- Categories grid-->
+    <!-- Category-->
+    @{
+        if (Model.getProduct.Products != null)
+        {
+            for (int i = 0; i < Model.getProduct.Products.Product.Length; i++)
+            {
+
+                <div>
+                    @if (@Model.getProduct.Products.Product[i].Product1.Photos.Photo != null)
+                    {
+                        <img src=@Model.getProduct.Products.Product[i].Product1.Photos.Photo.Url alt="item" width="40" height="30">
+                    }
+                    <span style="font-size:16px">@Model.getProduct.Products.Product[i].Product1.Title</span><span style="font-size:14px"> 
+                    Price ₺@Model.getProduct.Products.Product[i].Product1.BuyNowPrice</span>
+                </div>
+                <br />
+            }
+        }
+        else
+        {
+            <div>
+                <span>No items found.</span>
+            </div>
+        }
+    }
+</div>

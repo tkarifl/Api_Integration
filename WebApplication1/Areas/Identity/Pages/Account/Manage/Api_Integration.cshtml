@@ -1,0 +1,51 @@
+﻿@page
+@model WebApplication1.Areas.Identity.Pages.Account.Manage.Api_IntegrationModel
+
+@{
+    ViewData["Title"] = "Api_Integration";
+}
+
+<h1>Api Integration</h1>
+
+<h4>Gittigidiyor User Information</h4>
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="GgUserInfo.RoleUsername" class="control-label"></label>
+                <input asp-for="GgUserInfo.RoleUsername" class="form-control" />
+                <span asp-validation-for="GgUserInfo.RoleUsername" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GgUserInfo.RolePassword" class="control-label"></label>
+                <input asp-for="GgUserInfo.RolePassword" class="form-control" />
+                <span asp-validation-for="GgUserInfo.RolePassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GgUserInfo.ApiKey" class="control-label"></label>
+                <input asp-for="GgUserInfo.ApiKey" class="form-control" />
+                <span asp-validation-for="GgUserInfo.ApiKey" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GgUserInfo.SecretKey" class="control-label"></label>
+                <input asp-for="GgUserInfo.SecretKey" class="form-control" />
+                <span asp-validation-for="GgUserInfo.SecretKey" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Update" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+    <div class="col-md-2" />
+    <div class="col-md-4">
+        <img src="@Url.Content("/example_gg_credentials.png")" alt="image" width="500" height="600">
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
